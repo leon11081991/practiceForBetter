@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/dist/style/ubike_serach.min.css">
+    <title>Youbike2.0查詢</title>
+</head>
+<body>
+    <form action="/login" id="login" method="POST">
+        <div id="main">
+            <fieldset class="login_main">
+                <legend>登入 | Login</legend>
+                <label for="username">使用者帳號:</label>
+                <input type="text" id="username" name="username" value="" minlength="6" required>
+                <label for="password">使用者密碼:</label>
+                <input type="password" id="pwd" name="pwd" minlength="6" required>
+                <div class="for_pwd">
+                    <input type="checkbox" id="showPwd">
+                    <label for="showPwd">顯示密碼</label>
+                </div>
+                <input type="submit" value="登入" id="submit_btn">
+            </fieldset>
+        </div>
+    </form>
+
+    <div id="container">
+        <h1>Youbike2.0及時查詢</h1>
+
+        <div id="update_time"></div>
+
+        <h3>請選擇您要查詢的Ubike區/站名</h3>
+        
+        <div class="data-area">
+            <div class="first_sel">
+                <label>查詢區域:</label>
+                    <select name="district" id="district-sel">
+                    <option value="" selected>----請選擇區域----</option>
+                </select>
+            </div>
+
+            <div class="second_sel">
+                <label>查詢站名:</label>
+                <select name="station"" id="station_sel">
+                    <option value="">----請選擇站名----</option>
+                </select>
+            </div>
+
+            <button id="startSearch" type="submit"  disabled>開始尋找</button>
+        </div>
+
+        <div class="result-area">
+            <ul id="result">
+                <li class="update-time"></li>
+                <li class="sta"></li>
+                <li class="number-now"></li>
+                <li class="empty-num"></li>
+            </ul>
+        </div>
+
+        <div id="map"></div>
+    </div>
+
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js' integrity='sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==' crossorigin='anonymous'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js' integrity='sha512-37T7leoNS06R80c8Ulq7cdCDU5MNQBwlYoy1TX/WUsLFC2eYNqtKlV0QjH7r8JpG/S0GUMZwebnVFLPd6SU5yg==' crossorigin='anonymous'></script>
+    <script src="./js/ubike_search.js"></script>
+    <script async
+    src="https://maps.googleapis.com/maps/api/js?key=MyKey&callback=initMap">
+    </script>
+</body>
+</html>
+
