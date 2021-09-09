@@ -1,0 +1,138 @@
+@font-face {
+  font-family: "Noto Sans TC";
+  src: url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;700;900&display=swap");
+}
+@mixin warn($size, $color, $weight) {
+  font-size: $size;
+  color: $color;
+  font-weight: $weight;
+}
+
+$btn-color: hsl(240, 20%, 22%);
+$warn-color: hsl(229, 6%, 66%);
+$normal-color: hsl(230, 12%, 34%);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Noto Sans TC", sans-serif;
+  font-style: 16px;
+  padding: 0 30px;
+
+  header {
+    text-align: center;
+    padding: 70px 0px 50px 0px;
+
+    h1 {
+      font-size: 1.6rem;
+      color: $normal-color;
+      font-weight: 900;
+      margin-bottom: 0.5rem;
+    }
+    h2 {
+      font-size: 1.4rem;
+      color: hsl(230, 6%, 36%);
+      font-weight: 100;
+      margin-bottom: 1.5rem;
+    }
+    p {
+      @include warn(8px, $warn-color, 100);
+      max-width: 590px;
+      margin: 0 auto;
+    }
+  }
+
+  .cards {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 70px;
+
+    .card {
+      box-shadow: 2px 8px 14px 0px $warn-color;
+      border-radius: 15px;
+      padding: 30px;
+      margin: 2rem 0;
+      max-width: 400px;
+
+      &.fixed {
+        margin: 0;
+      }
+
+      h1 {
+        color: $normal-color;
+        font-size: 2.2rem;
+      }
+
+      h3 {
+        color: $normal-color;
+        margin-top: 15px;
+      }
+
+      h5 {
+        color: $normal-color;
+        margin: 10px auto 10px 5px;
+        padding: 0 0 10px 0;
+        font-weight: bolder;
+        border-bottom: 1px solid $warn-color;
+      }
+
+      p {
+        color: hsl(230, 6%, 36%);
+        margin: 5px;
+      }
+
+      h6 {
+        @include warn(8px, $warn-color, 100);
+        margin-top: 10px;
+      }
+
+      button {
+        display: block;
+        margin-left: auto;
+        padding: 10px;
+        border-radius: 10px;
+        border: 1px solid $btn-color;
+        background-color: $btn-color;
+        color: whitesmoke;
+        cursor: pointer;
+        margin-top: 20px;
+
+        &:hover {
+          transform: scale(1.1);
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
+
+@media only screen and(min-width: 1200px) {
+  body {
+    font-size: 24px;
+
+    header {
+      h1 {
+        font-size: 2em;
+      }
+
+      p {
+        font-size: 14px;
+        max-width: 550px;
+      }
+    }
+
+    .cards {
+      flex-direction: row;
+
+      .card {
+        margin: 30px;
+      }
+    }
+  }
+}
