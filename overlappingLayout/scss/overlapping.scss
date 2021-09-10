@@ -1,0 +1,140 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;300;500;900&display=swap");
+
+$NotoFont: "Noto Sans TC", sans-serif;
+$bgc: #fddcc356;
+$content-color: rgba(169, 122, 93, 0.8);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-family: $NotoFont;
+
+  section {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $bgc;
+    margin: 0;
+
+    .container {
+      width: 90%;
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: start;
+
+      .left {
+        width: 50%;
+        height: 600px;
+        background: url(/img/yu.jpg) right / cover;
+        border-radius: 10px;
+      }
+
+      .right {
+        width: 50%;
+        max-width: 600px;
+        min-height: 400px;
+        background-color: $content-color;
+        color: white;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 10px;
+        margin-left: -20%;
+        margin-top: 30%;
+        position: relative;
+        // text-align: center;
+
+        h1 {
+          font-size: 35px;
+          font-weight: 100;
+          padding: 20px;
+          margin: 0 auto;
+          // position: relative;
+        }
+
+        p {
+          width: 90%;
+          // max-width: 400px;
+          padding: 20px;
+          margin: 10px 10px;
+          font-size: 16px;
+          font-weight: 500;
+          position: absolute;
+          display: block;
+          top: 50%;
+        }
+
+        a {
+          text-decoration: none;
+          background-color: #fff;
+          color: $content-color;
+          padding: 10px;
+          border-radius: 10px;
+          display: inline-block;
+          margin: 0 0 0 100%;
+          z-index: -1;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  html {
+    section {
+      .container {
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 10px;
+
+        .left {
+          width: 100%;
+        }
+
+        .right {
+          width: 80%;
+          margin: 0;
+          margin-top: -30%;
+          // min-height: 550px;
+          h1 {
+            font-size: 30px;
+          }
+
+          p {
+            position: relative;
+            font-weight: 300;
+            padding-bottom: 5px;
+          }
+
+          a {
+            display: block;
+            margin: 0px 5px 10px 65%;
+            text-align: center;
+            font-size: 16px;
+          }
+        }
+      }
+    }
+  }
+}
+
+// @media screen and (max-width: 1100px) {
+//   html {
+//     section {
+//       .right {
+//         h1 {
+//           font-size: 30px;
+//         }
+//       }
+//     }
+//   }
+// }
